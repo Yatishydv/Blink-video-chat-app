@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blink — Blink connects you instantly</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- 🔒 PRIVACY MODAL (LANDING ONLY) -->
+<div id="privacyModal" class="modal-backdrop hidden">
+  <div class="modal">
+    <h2>Privacy at Blink</h2>
+
+    <p class="modal-sub">
+      Your privacy matters. Here’s how Blink works:
+    </p>
+
+    <ul>
+      <li>No video or audio is recorded.</li>
+      <li>Calls are peer-to-peer.</li>
+      <li>Messages are not stored.</li>
+      <li>Connections are temporary & anonymous.</li>
+      <li>For users aged 18+ only.</li>
+    </ul>
+
+    <button id="acceptPrivacy" class="btn primary full">
+      I Understand & Continue
+    </button>
+  </div>
+</div>
+
+<!-- LANDING PAGE -->
+<div class="landing">
+
+  <!-- Header -->
+  <header class="landing-header">
+    <div class="brand">
+      <span class="logo">Blink</span>
+      <span class="dot">•</span>
+      <span class="tagline">connects you instantly</span>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>
+      Meet someone new.<br />
+      Instantly.
+    </h1>
+
+    <p class="hero-text">
+      Blink lets you start real conversations with new people,
+      without sign-ups, profiles, or distractions.
+    </p>
+
+    <div class="hero-actions">
+      <button id="startLanding" class="btn primary large">
+        Start chatting
+      </button>
+      <span class="note">18+ only • Conversations are private</span>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="feature">
+      <h3>No sign-ups</h3>
+      <p>Jump straight into a conversation. No accounts required.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Private by design</h3>
+      <p>We don’t record calls or store messages.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Instant connections</h3>
+      <p>One click is all it takes to meet someone new.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>© 2026 Blink</span>
+    <span class="sep">•</span>
+    <span>Privacy first</span>
+    <span class="sep">•</span>
+    <span>18+</span>
+  </footer>
+
+</div>
+
+<script src="landing.js"></script>
+</body>
+</html>

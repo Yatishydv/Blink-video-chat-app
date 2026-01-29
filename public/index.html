@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blink — Blink connects you instantly</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="brand">
+      <span class="logo">Blink</span>
+      <span class="dot">•</span>
+      <span class="tagline">connects you instantly</span>
+    </div>
+    <span class="status">Online</span>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Video Section -->
+    <section class="video-section">
+      <div class="video-wrapper">
+        <video id="remoteVideo" autoplay playsinline></video>
+
+        <div class="self-video">
+          <video id="localVideo" autoplay muted playsinline></video>
+          <span>You</span>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button id="startBtn" class="btn primary">Start</button>
+        <button id="nextBtn" class="btn">Next</button>
+        <button id="muteBtn" class="btn">Mute</button>
+        <button id="camBtn" class="btn">Camera Off</button>
+      </div>
+    </section>
+
+    <!-- Chat Section -->
+    <aside class="chat-section">
+      <div class="chat-header">Chat</div>
+
+      <div id="connectionTimer" class="timer hidden">00:00</div>
+
+
+      <div id="messages" class="messages"></div>
+      <div id="typingIndicator" class="typing">Stranger is typing…</div>
+
+      <div class="chat-input">
+        <input id="msgInput" placeholder="Type a message…" />
+        <button id="sendBtn" class="btn primary">Send</button>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>© 2026 Blink</span>
+    <span class="sep">•</span>
+    <span>Conversations are private</span>
+    <span class="sep">•</span>
+    <span>18+</span>
+  </footer>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
