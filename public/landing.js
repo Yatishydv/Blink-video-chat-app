@@ -1,29 +1,27 @@
-console.log("Landing JS loaded");
+console.log("✅ landing.js loaded");
 
-const modal = document.getElementById("privacyModal");
-const startBtn = document.getElementById("startLanding");
-const acceptBtn = document.getElementById("acceptPrivacy");
+document.addEventListener("DOMContentLoaded", () => {
+  const startBtn = document.getElementById("startBtn");
+  const modal = document.getElementById("privacyModal");
+  const acceptBtn = document.getElementById("acceptPrivacy");
 
-// SAFETY CHECKS
-if (!startBtn) {
-  console.error("Start button not found");
-}
+  console.log("startBtn:", startBtn);
+  console.log("modal:", modal);
+  console.log("acceptBtn:", acceptBtn);
 
-if (!acceptBtn) {
-  console.error("Accept privacy button not found");
-}
+  if (!startBtn || !modal || !acceptBtn) {
+    console.error("❌ Required landing elements missing");
+    return;
+  }
 
-// Open privacy modal
-startBtn.addEventListener("click", () => {
-  console.log("Start chatting clicked");
-  modal.classList.remove("hidden");
-});
+  startBtn.addEventListener("click", () => {
+    console.log("👉 Start chatting clicked");
+    modal.classList.remove("hidden");
+  });
 
-// Accept privacy & redirect
-acceptBtn.addEventListener("click", () => {
-  console.log("Privacy accepted");
-  localStorage.setItem("blinkPrivacyAccepted", "true");
-
-  // ✅ CORRECT REDIRECT
-  window.location.href = "/app";
+  acceptBtn.addEventListener("click", () => {
+    console.log("✅ Privacy accepted");
+    localStorage.setItem("blinkPrivacyAccepted", "true");
+    window.location.href = "/app";
+  });
 });

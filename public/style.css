@@ -6,20 +6,18 @@
 /* =========================
    BODY (MOBILE SAFE)
 ========================= */
-
 body {
   margin: 0;
   background: #f4f6f8;
   color: #1f2933;
-  overscroll-behavior: none; /* 🔒 stop rubber scrolling */
+  overscroll-behavior: none;
 }
 
 /* =========================
    APP LAYOUT (KEYBOARD SAFE)
 ========================= */
-
 .app {
-  height: 100dvh; /* 🔑 dynamic viewport for mobile keyboard */
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -28,7 +26,6 @@ body {
 /* =========================
    HEADER
 ========================= */
-
 .header {
   height: 64px;
   padding: 0 24px;
@@ -40,7 +37,6 @@ body {
 }
 
 /* BRAND */
-
 .brand {
   display: flex;
   align-items: center;
@@ -70,9 +66,8 @@ body {
 }
 
 /* =========================
-   MAIN (FIXED HEIGHT)
+   MAIN (DESKTOP GRID)
 ========================= */
-
 .main {
   flex: 1;
   display: grid;
@@ -85,7 +80,6 @@ body {
 /* =========================
    VIDEO
 ========================= */
-
 .video-section {
   display: flex;
   flex-direction: column;
@@ -108,7 +102,6 @@ body {
 }
 
 /* SELF VIDEO */
-
 .self-video {
   position: absolute;
   bottom: 14px;
@@ -141,7 +134,6 @@ body {
 /* =========================
    CONTROLS
 ========================= */
-
 .controls {
   display: flex;
   gap: 12px;
@@ -164,9 +156,8 @@ body {
 }
 
 /* =========================
-   CHAT (LOCKED)
+   CHAT
 ========================= */
-
 .chat-section {
   background: #ffffff;
   border-radius: 14px;
@@ -208,8 +199,7 @@ body {
   display: none;
 }
 
-/* CHAT INPUT (SAFE AREA FIX) */
-
+/* CHAT INPUT */
 .chat-input {
   display: flex;
   gap: 8px;
@@ -229,7 +219,6 @@ body {
 /* =========================
    TIMER
 ========================= */
-
 .timer {
   text-align: center;
   font-size: 12px;
@@ -244,7 +233,6 @@ body {
 /* =========================
    FOOTER
 ========================= */
-
 .footer {
   height: 44px;
   background: #ffffff;
@@ -258,9 +246,8 @@ body {
 }
 
 /* =========================
-   SEARCHING ANIMATION
+   SEARCHING
 ========================= */
-
 .searching {
   font-size: 13px;
   color: #6b7280;
@@ -279,26 +266,189 @@ body {
 }
 
 /* =========================
-   RESPONSIVE (MOBILE FIX)
+   LANDING PAGE (RESTORED)
 ========================= */
+.landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
+.landing-header {
+  height: 72px;
+  padding: 0 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+}
+
+/* HERO */
+.hero {
+  flex: 1;
+  padding: 80px 24px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.hero-text {
+  font-size: 16px;
+  color: #4b5563;
+  max-width: 520px;
+  margin: 0 auto 32px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* FEATURES */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto 80px;
+  padding: 0 24px;
+}
+
+.feature {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.feature h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* =========================
+   MOBILE RESPONSIVE (FINAL)
+========================= */
 @media (max-width: 900px) {
+
+  /* Stack video + chat */
   .main {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px;
   }
 
   .chat-section {
-    min-height: 0; /* 🔑 critical for scrolling */
+    flex: 1;
+    min-height: 0;
   }
 
   .self-video {
-    width: 180px;
-    height: 120px;
+    width: 110px;
+    height: 80px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .self-video span {
+    font-size: 10px;
+    padding: 2px 6px;
   }
 
   .tagline {
     display: none;
   }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+}
+/* =========================
+   PRIVACY MODAL VISIBILITY FIX
+========================= */
+.modal-backdrop {
+  display: flex;           /* 👈 force visible when not hidden */
+}
+
+.modal-backdrop.hidden {
+  display: none;
+}
+/* =========================
+   MODAL ROOT FIX (FINAL)
+========================= */
+#privacyModal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+}
+
+/* =========================
+   PRIVACY MODAL – FINAL FIX
+========================= */
+
+#privacyModal {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+}
+
+#privacyModal.modal-backdrop {
+  background: rgba(15, 23, 42, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#privacyModal.hidden {
+  display: none;
+}
+
+/* Modal card */
+#privacyModal .modal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 40px 120px rgba(0,0,0,0.45);
+}
+
+/* Text */
+#privacyModal h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+#privacyModal .modal-sub {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 14px;
+}
+
+#privacyModal ul {
+  padding-left: 18px;
+  margin: 0 0 20px;
+}
+
+#privacyModal li {
+  font-size: 14px;
+  margin-bottom: 6px;
 }
