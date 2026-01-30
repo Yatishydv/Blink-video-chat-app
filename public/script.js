@@ -313,3 +313,45 @@ msgInput.addEventListener("focus", () => {
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
   }, 300);
 });
+
+
+// =========================
+// GOOGLE ANALYTICS EVENTS
+// =========================
+
+// Match found
+socket.on("role", (role) => {
+  gtag("event", "match_found", {
+    event_category: "matching",
+    event_label: role
+  });
+});
+
+// Stranger disconnected
+socket.on("strangerDisconnected", () => {
+  gtag("event", "match_disconnected", {
+    event_category: "dropoff"
+  });
+});
+
+// User leaves page
+window.addEventListener("beforeunload", () => {
+  gtag("event", "user_left", {
+    event_category: "dropoff"
+  });
+});
+
+// Cookie notice
+const cookieNotice = document.getElementById("cookieNotice");
+const acceptCookies = document.getElementById("acceptCookies");
+
+if (cookieNotice && !localStorage.getItem("blinkCookiesAccepted")) {
+  cookieNotice.classList.remove("hidden");
+}
+
+if (acceptCookies) {
+  acceptCookies.addEventListener("click", () => {
+    localStorage.setItem("blinkCookiesAccepted", "true");
+    cookieNotice.classList.add("hidden");
+  });
+}

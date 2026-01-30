@@ -5,79 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blink Blink connects you instantly</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/style.css?v=6" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P0W7YNWLBY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P0W7YNWLBY');
+  </script>
+
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
 
-  <!-- LANDING PAGE (V1 STRUCTURE) -->
-  <div class="landing">
-
-    <header class="landing-header">
-      <div class="brand">
-        <span class="logo">Blink</span>
-        <span class="dot">•</span>
-        <span class="tagline">connects you instantly</span>
-      </div>
-    </header>
-
-    <main class="hero">
-      <h1>Meet strangers instantly</h1>
-      <p class="hero-text">
-        Talk to random people via video and chat.
-        No signup. No history.
-      </p>
-
-      <div class="hero-actions">
-        <!-- ✅ SAME BUTTON, JUST FIXED ID -->
-        <button id="startBtn" class="btn primary large">
-          Start chatting
-        </button>
-
-        <p class="note">
-          By continuing, you agree to our Privacy & Safety rules.
-        </p>
-      </div>
-    </main>
-
-    <section class="features">
-      <div class="feature">
-        <h3>Instant matching</h3>
-        <p>Get connected with a stranger in seconds.</p>
-      </div>
-      <div class="feature">
-        <h3>Private & anonymous</h3>
-        <p>No accounts. No saved chats.</p>
-      </div>
-      <div class="feature">
-        <h3>Mobile friendly</h3>
-        <p>Works smoothly on all devices.</p>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- PRIVACY MODAL (UNCHANGED STRUCTURE) -->
-  <div id="privacyModal" class="modal-backdrop hidden">
-    <div class="modal">
-      <h2>Privacy & Safety</h2>
-      <p class="modal-sub">
-        Please confirm before continuing:
-      </p>
-
-      <ul>
-        <li>You are 18+ years old</li>
-        <li>No recording or screenshots</li>
-        <li>No abusive or illegal content</li>
-      </ul>
-
-      <button id="acceptPrivacy" class="btn primary full">
-        I Agree & Continue
-      </button>
+<div class="landing">
+  <header class="landing-header">
+    <div class="brand">
+      <span class="logo">Blink</span>
+      <span class="dot">•</span>
+      <span class="tagline">connects you instantly</span>
     </div>
-  </div>
+  </header>
 
-  <!-- JS (ONLY THIS SCRIPT) -->
-  <script src="/landing.js?v=6"></script>
+  <main class="hero">
+    <h1>Meet strangers instantly</h1>
+    <p class="hero-text">
+      Talk to random people via video and chat.
+      No signup. No history.
+    </p>
+
+    <div class="hero-actions">
+      <button id="startBtn" class="btn primary large">
+        Start chatting
+      </button>
+      <p class="note">
+        By continuing, you agree to our Privacy & Safety rules.
+      </p>
+    </div>
+  </main>
+
+  <section class="features">
+    <div class="feature">
+      <h3>Instant matching</h3>
+      <p>Get connected with a stranger in seconds.</p>
+    </div>
+    <div class="feature">
+      <h3>Private & anonymous</h3>
+      <p>No accounts. No saved chats.</p>
+    </div>
+    <div class="feature">
+      <h3>Mobile friendly</h3>
+      <p>Works smoothly on all devices.</p>
+    </div>
+  </section>
+</div>
+
+<!-- Privacy Modal -->
+<div id="privacyModal" class="modal-backdrop hidden">
+  <div class="modal">
+    <h2>Privacy & Safety</h2>
+    <p class="modal-sub">Please confirm before continuing:</p>
+    <ul>
+      <li>You are 18+ years old</li>
+      <li>No recording or screenshots</li>
+      <li>No abusive or illegal content</li>
+    </ul>
+    <button id="acceptPrivacy" class="btn primary full">
+      I Agree & Continue
+    </button>
+  </div>
+</div>
+
+<!-- Cookie Notice -->
+<!-- <div id="cookieNotice" class="cookie hidden">
+  <span>We use cookies for basic analytics.</span>
+  <button id="acceptCookies" class="btn primary">OK</button>
+</div> -->
+
+<!-- Cookie Notice -->
+<div id="cookieNotice" class="cookie">
+  <span>
+    We use cookies for anonymous analytics to improve Blink.
+  </span>
+  <button id="acceptCookies" type="button" class="btn primary">
+    Got it
+  </button>
+</div>
+
+
+
+<script src="/landing.js"></script>
 </body>
 </html>

@@ -452,3 +452,57 @@ body {
   font-size: 14px;
   margin-bottom: 6px;
 }
+
+
+/* =========================
+   COOKIE NOTICE (POLISHED)
+========================= */
+
+.cookie {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 520px;
+  width: calc(100% - 32px);
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  font-size: 13px;
+  color: #374151;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  z-index: 100000;
+}
+
+.cookie span {
+  line-height: 1.4;
+}
+
+.cookie button {
+  white-space: nowrap;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+/* Mobile tweak */
+@media (max-width: 480px) {
+  .cookie {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .cookie button {
+    width: 100%;
+  }
+}
